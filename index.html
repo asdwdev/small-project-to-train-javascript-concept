@@ -1,12 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>belajar javascript</title>
+    <title>Todo List</title>
   </head>
   <body>
-    <h1>halo</h1>
-    <script src="script.js"></script>
+    <h2>Todo List</h2>
+    <ul id="daftar">
+      <li>Belajar JavaScript <button class="hapus">Hapus</button></li>
+    </ul>
+
+    <input type="text" id="inputKegiatan" placeholder="Tambah kegiatan baru" />
+    <button id="tambah">Tambah</button>
+
+    <script>
+      let daftar = document.getElementById("daftar");
+      let input = document.getElementById("inputKegiatan");
+      let tombol = document.getElementById("tambah");
+
+      // fungsi buat nambah item baru
+      function tambahItem(teks) {
+        let li = document.createElement("li");
+        li.textContent = teks + " ";
+
+        let btnHapus = document.createElement("button");
+        btnHapus.textContent = "Hapus";
+        btnHapus.classList.add("hapus");
+
+        // event tombol hapus
+        btnHapus.addEventListener("click", () => {
+          daftar.removeChild(li);
+        });
+
+        li.appendChild(btnHapus);
+        daftar.appendChild(li);
+      }
+
+      // event klik tombol tambah
+      tombol.addEventListener("click", () => {
+        let kegiatanBaru = input.value;
+        if (kegiatanBaru !== "") {
+          tambahItem(kegiatanBaru);
+          input.value = "";
+        }
+      });
+    </script>
   </body>
 </html>
