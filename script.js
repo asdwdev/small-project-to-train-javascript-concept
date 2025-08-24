@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 let perpustakaan = [
   {
     judul: "tower of god",
@@ -52,4 +53,22 @@ if (bukuSetelah2020.length !== 0) {
   });
 } else {
   console.log("buku setelah tahun 2020 tidak ditemukan.");
+=======
+let nilai = [100, 98, 95, 97, 99];
+
+nilai.forEach((n, i) => {
+  console.log("nilai " + (i + 1) + ": " + n);
+});
+
+let total = nilai.reduce((acc, n) => acc + n, 0);
+let rataRata = total / nilai.length;
+console.log("rata-rata: " + rataRata);
+
+if (rataRata >= 80) {
+  console.log("predikat a");
+} else if (rataRata >= 75) {
+  console.log("predikat b");
+} else {
+  console.log("predikat c");
+>>>>>>> 88d47696976e13b38bc34c4cfed76454f6ce6bed
 }
